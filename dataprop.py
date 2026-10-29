@@ -38,11 +38,6 @@ def compute_metrics(img):
     ndwi = img_masked.normalizedDifference(['B8', 'B11']).rename('NDWI')
     return img_masked.addBands(ndvi).addBands(ndwi)
 
-#define our Region of Interest and getting our images from the Sentinel 2 satellite (Changoi Farm)
-roi = ee.Geometry.Polygon([clean_coords])
-landsat = (ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED').filterDate(start_date, end_date).filterBounds(roi).map(compute_metrics))
-landsat_aoi = landsat.filterBounds(roi)
-
 #Pulling average NDVI and NDWI for each image
 def reduce_region(img):
     mean_ndvi = img.reduceRegion(
