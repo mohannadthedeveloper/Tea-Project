@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://opengis.net">
+  <Document>
+    <name>My Custom Polygon</name>
+    <Style id="polyStyle">
+      <LineStyle>
+        <color>ff0000ff</color>
+        <width>3</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>400000ff</color>
+      </PolyStyle>
+    </Style>
+    <Placemark>
+      <name>Area Perimeter</name>
+      <styleUrl>#polyStyle</styleUrl>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              35.2050,-0.4700,0
+              35.2350,-0.4700,0
+              35.2350,-0.4900,0
+              35.2050,-0.4900,0
+              35.2050,-0.4700,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+  </Document>
+</kml>
